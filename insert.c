@@ -4,7 +4,7 @@ void main()
 	int a[10],i,in,n,pos;
 	printf("Enter the limit:");
 	scanf("%d",&n);
-	printf("Enter the elements:");
+	printf("Enter the numbers:");
 	for(i=0;i<n;i++)
 	{
 		scanf("%d",&a[i]);
@@ -18,6 +18,7 @@ void main()
 		a[i]=a[i-1];
 	}
 	a[pos-1]=in;
+	printf("The new updated array:");
 	for(i=0;i<n+1;i++)
 	{
 		printf("%d\t",a[i]);
