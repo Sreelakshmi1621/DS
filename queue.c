@@ -7,6 +7,7 @@ void peek();
 void printQueue();
 int isfull();
 int isempty();
+int currentSize();
 
 // Global variables
 int queue[100], maxsize, front = -1, rear = -1;
@@ -59,7 +60,7 @@ void main() {
 
 // Function to check if the queue is full
 int isfull() {
-    if (rear == maxsize - 1) {
+    if (currentSize() == maxsize) {
         return 1; // Queue is full
     }
     return 0; // Queue is not full
@@ -71,6 +72,14 @@ int isempty() {
         return 1; // Queue is empty
     }
     return 0; // Queue is not empty
+}
+
+// Function to get the current number of elements in the queue
+int currentSize() {
+    if (isempty()) {
+        return 0;
+    }
+    return rear - front + 1;
 }
 
 // Function to insert an element into the queue
@@ -130,4 +139,3 @@ void printQueue() {
     }
     printf("\n");
 }
-
